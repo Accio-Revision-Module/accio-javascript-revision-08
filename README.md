@@ -80,7 +80,17 @@ console.log(newText); // Output: "Hello, JavaScript!"
 - **Description**: Deferring the loading of non-critical resources to increase performance.
 
 ## Browser Caching
+Browser caching is a technique used to store web page resource files like CSS, JavaScript, and images locally in the user's browser. This helps reduce the need for repeated server requests, improving website performance and load times. Here are some common headers used for controlling caching:
 
-- **Description**: Storing web page resource files (CSS, JS) locally to reduce server requests.
+| Header              | Purpose                           | Where to Use                     |
+|---------------------|-----------------------------------|----------------------------------|
+| Cache-Control       | Specifies caching directives      | HTTP Responses (Server)          |
+| Expires             | Sets an expiration date for cache | HTTP Responses (Server)          |
+| Last-Modified       | Indicates the last modification   | HTTP Responses (Server)          |
+| If-Modified-Since   | Validates cache against server    | HTTP Requests (Browser to Server)|
+| ETag                | Provides a unique identifier     | HTTP Responses (Server)          |
+| If-None-Match       | Validates cache against ETag      | HTTP Requests (Browser to Server)|
+
+These headers allow web developers to control how long browser caching should persist and how it should be validated against the server. This helps in efficiently serving cached resources while ensuring that the browser always has the latest version when necessary.
 
 ---
